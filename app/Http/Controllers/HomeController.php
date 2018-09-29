@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth; //Auth::check()
 
 class HomeController extends Controller
 {
@@ -24,6 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if(Auth::check()){
+            //待:判斷帳號是否 "active"
+            session()->put('logined','1');
+        }
         return view('home');
     }
 }
