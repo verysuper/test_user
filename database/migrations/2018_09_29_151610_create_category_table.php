@@ -20,8 +20,9 @@ class CreateCategoryTable extends Migration
             // 1:顯示
             // 0:不顯示
             $table->string('status',1)->default('0');
-            $table->integer('sort');
-            $table->timestamps('created_at');
+            $table->integer('views');
+            $table->integer('sort')->nullable();
+            $table->timestamps();
 
             // 建立索引
             $table->index(['parent'], 'category_idx');
