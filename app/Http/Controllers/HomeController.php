@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth; //Auth::check()
+use Illuminate\Auth\Events\Verified;
 
 class HomeController extends Controller
 {
@@ -23,12 +24,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($parent=0,Request $request)
     {
+        //判斷有無使用者登入
         if(Auth::check()){
-            //待:判斷帳號是否 "active"
-            session()->put('logined','1');
+            //判斷帳號是否 "active"
+            if ($request->user()->hasVerifiedEmail()) {
+                session()->put('logined','1');
+            }
         }
+
+
         return view('home');
     }
 }

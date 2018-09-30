@@ -68,7 +68,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home/0') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
@@ -78,7 +78,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    <a href="/home" style="text-decoration:none;color:#636b6f;">細胞學網</a>
+                    <a href="/home/0" style="text-decoration:none;color:#636b6f;">細胞學網</a>
                 </div>
 
                 <!-- <div class="links">
