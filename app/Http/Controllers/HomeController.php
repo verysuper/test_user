@@ -29,7 +29,7 @@ class HomeController extends Controller
         // print_r($parent);
         // echo '<br>';
         // DB::enableQueryLog();
-        // $categoryList=Category::where('parent',$parent)->get();
+        $list=Category::where('parent',$parent)->get();
         // var_dump(DB::getQueryLog());
         // echo '<br>';
         // echo '<pre>'; print_r($categoryList); echo '</pre>';
@@ -39,10 +39,7 @@ class HomeController extends Controller
         // exit;
 
         $binding=[
-            'test1'=>'test1',
-            'test2'=>'test2',
-            'test3'=>'test3',
-            'test4'=>'test4',
+            'list'=>$list,
         ];
 
         return view('home',$binding);
