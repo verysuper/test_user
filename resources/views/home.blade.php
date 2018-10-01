@@ -20,6 +20,12 @@
                     @endif
 
                     <!-- category -->
+                    <!-- <div class="row"> -->
+                        <a href="#"><div class="col btn"><h2>{{$test1}} »</h2></div></a>
+                        <a href="#"><div class="col btn"><h2>{{$test2}} »</h2></div></a>
+                        <a href="#"><div class="col btn"><h2>{{$test3}} »</h2></div></a>
+                        <a href="#"><div class="col btn"><h2>{{$test4}} »</h2></div></a>
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
